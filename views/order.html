@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <h1>Menu</h1>
+    <div class="menu-grid">
+      <!-- Rows will dynamically populate -->
+      {# loop through the records and render them #} {% for item in menu %}
+      <div class="row" data-id="{{ item[0] }}">
+        <h4>{{ item[1] }}</h4>
+        <h4>{{ item[2] }}</h4>
+      </div>
+      {% endfor %}
+    </div>
+    <h1>Order Form</h1>
+    <form action="/addorder" method="POST" class="order-form">
+      <label for="menuitems">Item:</label>
+      <br />
+      <select id="selector" name="menuitems" form="menuitems">
+        {# loop through the records and render them #} {% for item in menu %}
+        <option class="item" name="{{ item[0] }}" value="{{ item[0] }}">
+          {{ item[1] }}
+        </option>
+        {% endfor %}
+      </select>
+      <br />
+      <br />
+      <label for="name">Name:</label>
+      <br />
+      <input type="text" id="name" name="name" required />
+      <br />
+      <label for="quantity">Quantity:</label>
+      <br />
+      <input
+        type="number"
+        id="quantity"
+        name="quantity"
+        value="1"
+        min="0"
+        required
+      />
+      <br />
+      <h4 class="the-cost"></h4>
+      <button type="submit" id="submit">Submit</button>
+    </form>
+    <script src="/../public/mainOrder.js"></script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+
+
+  <body>
+    <h1>Orders</h1>
+    <div class="order-grid">
+      <!-- Rows will dynamically populate -->
+      {# loop through the records and render them #}
+      {% for order in orders %}
+      <div class="order-row" id="{{ order[0] }}">
+        <h4> item_id: {{ order[1] }}  </h4>
+        <h4> name: {{ order[2] }} </h4>
+        <h4> quantity: {{ order[3] }} </h4>
+        <button data-id="{{ order[0] }}"data-status="{{ order[4] }}" class="status-button" > status </button>
+      </div>
+      {% endfor %}
+    </div>
+
+    <h1>Menu</h1>
+    <div class="menu-grid">
+      <!-- Rows will dynamically populate -->
+      {# loop through the records and render them #} 
+      {% for item in menu %}
+      <div class="row" data-id="{{ item[0] }}">
+        <h4 > id: {{ item[0] }}  </h4>
+        <h4 class="food"> food: {{ item[1] }} </h4>
+        <h4 class="price"> price: {{ item[2] }} </h4>
+      </div>
+      {% endfor %}
+    </div>
+    <h1>Change Menu</h1>
+    <div class="form-grid">
+      <div>
+        <h3>Add Menu item</h3>
+        <form action="/postmenu" method="POST" class="post-menu">
+          <label for="name">Name:</label>
+          <br />
+          <input type="text" id="name" name="name" required/>
+          <br />
+          <label for="price">Cost:</label>
+          <br />
+          <input type="text" id="price" name="price" required/>
+          <br />
+          <button type="submit" id="submit">Submit</button>
+        </form>
+      </div>
+      <div>
+        <h3>Edit Menu item</h3>
+        <form class="edit-menu">
+          <label for="item_id">Item ID:</label>
+          <br />
+          <input type="text" id="item_id" name="item_id" required/>
+          <br />
+          <label for="name">New Name:</label>
+          <br />
+          <input type="text" id="name" name="name" required/>
+          <br />
+          <label for="name">New Price:</label>
+          <br />
+          <input type="text" id="price" name="price" required/>
+          <br />
+          <button type="submit" id="submit">Submit</button>
+        </form>
+      </div>
+      <div>
+        <h3>Delete Menu item</h3>
+        <form  class="remove-menu">
+          <label for="item_id">Item ID:</label>
+          <input type="text" id="item_id" name="item_id" />
+          <br />
+          <button type="submit" id="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <script src="/../public/maina.js"></script>
+  </body>
+</html>

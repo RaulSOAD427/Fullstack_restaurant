@@ -1,0 +1,49 @@
+* {
+  background-color: #333;
+}
+body {
+  color: white;
+}
+a {
+  font-size: xx-large;
+  color: white;
+}
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.block {
+  border: solid 1px white;
+}
+.form-grid {
+  display: flex;
+  gap: 2ch;
+}
+.order-grid {
+  color: white;
+  display: flex;
+  gap: 2ch;
+}
+input {
+  background-color: white;
+  color: black;
+}
+.menu-grid div {
+  border: solid 1px lightblue;
+  gap: 2ch;
+  padding: 2ch;
+}
+.order-grid div {
+  border: solid 1px lightblue;
+  gap: 2ch;
+  padding: 2ch;
+}
+div {
+  padding: 2ch;
+}
+row {
+  padding: 2ch;
+}
+#status-button {
+  background-color: red;
+}
