@@ -1,5 +1,6 @@
 * {
   background-color: #333;
+  text-align: center;
 }
 body {
   color: white;
@@ -10,18 +11,28 @@ a {
 }
 .menu-grid {
   display: flex;
+  flex: 1 1 0px;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 .block {
-  border: solid 1px white;
+  border: solid 3px white;
 }
 .form-grid {
   display: flex;
+  flex: 1 1 0px;
+  align-items: center;
+  justify-content: center;
   gap: 2ch;
 }
+
 .order-grid {
   color: white;
   display: flex;
+  flex: 1 1 0px;
+  align-items: center;
+  justify-content: center;
   gap: 2ch;
 }
 input {
@@ -29,12 +40,12 @@ input {
   color: black;
 }
 .menu-grid div {
-  border: solid 1px lightblue;
+  border: solid 3px lightblue;
   gap: 2ch;
   padding: 2ch;
 }
 .order-grid div {
-  border: solid 1px lightblue;
+  border: solid 3px lightblue;
   gap: 2ch;
   padding: 2ch;
 }
@@ -43,6 +54,23 @@ div {
 }
 row {
   padding: 2ch;
+}
+button {
+  color: white;
+}
+option {
+  color: white;
+}
+select {
+  color: white;
+}
+.left {
+  float: left;
+  margin: 2em;
+}
+.right {
+  float: right;
+  margin: 2em;
 }
 #status-button {
   background-color: red;

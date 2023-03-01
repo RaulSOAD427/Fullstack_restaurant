@@ -126,7 +126,7 @@ def db_select_orders(user_id:int=None):
 # GET /
 @app.get("/", response_class=HTMLResponse)
 def get_html() -> HTMLResponse:
-    with open("index.html") as html:
+    with open("views/index.html") as html:
         return HTMLResponse(content=html.read())
 
 @app.get('/order', response_class=HTMLResponse)
